@@ -8,6 +8,12 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css">
+ 
+
+
+
+
 
         <!-- Styles -->
         <style>
@@ -95,5 +101,6 @@
                 </div>
             </div>
         </div>
+        <!-- <script src="public/js/bootstrap.min.js"></script> -->
     </body>
 </html>

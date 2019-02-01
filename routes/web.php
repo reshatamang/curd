@@ -12,5 +12,6 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('fronts.pages.index');
+    // return view('fronts.layouts.master');
 });
