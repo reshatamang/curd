@@ -15,14 +15,14 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    {{-- <section class="content-header">
       <h1>
         Dasbhboard
       </h1>
       <ol class="breadcrumb">
         <li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
       </ol>
-    </section>
+    </section> --}}
 
     <!-- Main content -->
 @yield('content')
@@ -35,11 +35,11 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
-<script src="js/jquery-2.2.3.min.js"></script>
+<script src="{{ asset('back/js/jquery-2.2.3.min.js')}}"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="js/bootstrap.min.js"></script>
+<script src="{{ asset('back/js/bootstrap.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="js/app.min.js"></script>
+<script src="{{ asset('back/js/app.min.js')}}"></script>
 @yield('script')
 </body>
 </html>

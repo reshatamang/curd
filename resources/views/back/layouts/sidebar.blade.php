@@ -2,7 +2,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="{{asset('back/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Alexander Pierce</p>
@@ -27,7 +27,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-circle-o"></i> All Posts</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Add New</a></li>
+            <li><a href="{{route('post.create')}}"><i class="fa fa-circle-o"></i> Add New</a></li>
           </ul>
         </li>
         <li><a href="#"><i class="fa fa-folder"></i> <span>Categories</span></a></li>

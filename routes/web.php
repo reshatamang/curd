@@ -23,3 +23,4 @@ Route::get('/admin',function(){
     return view('back.dashboard');
     // return view('back.layouts.master');
 });
+Route::get('/admin/post/create','Postcontroller@create')->name('post.create');
