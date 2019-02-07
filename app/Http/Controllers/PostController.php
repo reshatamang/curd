@@ -28,14 +28,23 @@ class PostController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a the created Posts.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        // validate the form data
+        $validatedData = $request->validate([
+            'title' => 'required|',
+            'body' => 'required',
+        ]);
+    
+        // save the form data to database
+
+        // return view or response
+        // dd($request->all());
     }
 
     /**
