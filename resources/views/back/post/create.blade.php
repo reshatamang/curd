@@ -32,11 +32,13 @@
                 <div class="box-body">
                   <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" name="title" placeholder="Enter Title here" id="title" class="form-control">
+                    <input type="text" name="title" value="{{old('title')}}" placeholder="Enter Title here" id="title" class="form-control">
                   </div>
+                  {{-- text areama chai mustage text ko baira lekhnu parxa --}}
                   <div class="form-group">
-                    <label for="body">Body</label>
-                    <textarea name="body" id="body" rows="10" class="form-control"></textarea>
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" rows="10" class="form-control">{{old('description')}}
+                    </textarea>
                   </div>
                 </div>
                 <!-- /.box-body -->

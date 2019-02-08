@@ -37,9 +37,10 @@ class PostController extends Controller
     {
         // validate the form data
         $validatedData = $request->validate([
-            'title' => 'required|',
-            'body' => 'required',
+            'title' => 'required|unique:posts',
+            'description' => 'required|unique:posts',
         ]);
+    
     
         // save the form data to database
 
