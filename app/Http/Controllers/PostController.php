@@ -41,10 +41,25 @@ class PostController extends Controller
             'description' => 'required|unique:posts',
         ]);
     
-    
         // save the form data to database
 
+        $post =new Post;
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->user_id = 1;
+        $post->slug = str_slug($request->title);
+        $post->save();
+
+        // return 'successfull';
+     
+        
         // return view or response
+
+
+        return redirect()->back();
+        // return redirect()->route('post.create');
+
+
         // dd($request->all());
     }
 
