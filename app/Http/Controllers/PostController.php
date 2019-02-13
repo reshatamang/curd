@@ -14,7 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::all();
+        return view('back.post.index',compact('posts')) ;  
     }
 
     /**
@@ -50,12 +51,11 @@ class PostController extends Controller
         $post->slug = str_slug($request->title);
         $post->save();
 
-        // return 'successfull';
+        // return 'successfull';    
      
         
         // return view or response
-
-
+        
         return redirect()->back();
         // return redirect()->route('post.create');
 

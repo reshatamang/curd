@@ -23,5 +23,6 @@ Route::get('/admin',function(){
     return view('back.dashboard');
     // return view('back.layouts.master');
 });
+Route::get('/admin/post','Postcontroller@index')->name('post.index');
 Route::get('/admin/post/create','Postcontroller@create')->name('post.create');
 Route::post('/admin/post/store','Postcontroller@store')->name('post.store');
