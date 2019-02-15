@@ -7,7 +7,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="#">Post</a></li>
+    <li><a href="{{ route('post.index')}}">Post</a></li>
     <li class="active">Add New Post</li>
   </ol>
 </section>

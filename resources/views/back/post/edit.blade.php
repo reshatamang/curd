@@ -7,7 +7,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="#">Post</a></li>
+    <li><a href="{{ route('post.index')}}">Post</a></li>
     <li class="active">Add New Post</li>
   </ol>
 </section>
@@ -27,17 +27,17 @@
               </div>
           @endif
               <!-- form start -->
-              <form role="form" action="{{route('post.store')}}" method="POST">
+              <form role="form" action="{{route('post.update'.$post->id)}}" method="POST">
                 @csrf
                 <div class="box-body">
                   <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" name="title" value="{{old('title')}}" placeholder="Enter Title here" id="title" class="form-control">
+                    <input type="text" name="title" value="{{('$post->title')}}" placeholder="Enter Title here" id="title" class="form-control">
                   </div>
                   {{-- text areama chai mustage text ko baira lekhnu parxa --}}
                   <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea name="description" id="description" rows="10" class="form-control">{{old('description')}}
+                    <textarea name="description" id="description" rows="10" class="form-control">{{('4post->description')}}
                     </textarea>
                   </div>
                 </div>
