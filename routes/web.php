@@ -26,3 +26,5 @@ Route::get('/admin',function(){
 Route::get('/admin/post','Postcontroller@index')->name('post.index');
 Route::get('/admin/post/create','Postcontroller@create')->name('post.create');
 Route::post('/admin/post/store','Postcontroller@store')->name('post.store');
+Route::get('/admin/post/{post}/edit','Postcontroller@edit')->name('post.edit');
+

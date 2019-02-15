@@ -1,6 +1,6 @@
 @extends('back.layouts.master')
 @section('content')
-{{dump($posts)}}
+{{-- {{dump($posts)}} --}}
 
   <!-- Main content -->
   <section class="content">

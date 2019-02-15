@@ -82,7 +82,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('back.post.edit');
+
     }
 
     /**
