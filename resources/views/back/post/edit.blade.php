@@ -3,7 +3,7 @@
  <!-- Content Header (Page header) -->
  <section class="content-header">
   <h1>
-    Add New Post
+    edit Post
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -27,17 +27,18 @@
               </div>
           @endif
               <!-- form start -->
-              <form role="form" action="{{route('post.update'.$post->id)}}" method="POST">
+              <form role="form" action="{{route('post.update',$post->id)}}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="box-body">
                   <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" name="title" value="{{('$post->title')}}" placeholder="Enter Title here" id="title" class="form-control">
+                    <input type="text" name="title" value="{{$post->title}}" placeholder="Enter Title here" id="title" class="form-control">
                   </div>
                   {{-- text areama chai mustage text ko baira lekhnu parxa --}}
                   <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea name="description" id="description" rows="10" class="form-control">{{('4post->description')}}
+                    <textarea name="description" id="description" rows="10" class="form-control">{{$post->description}}
                     </textarea>
                   </div>
                 </div>
@@ -45,6 +46,8 @@
 
                 <div class="box-footer">
                   <button class="btn btn-primary" type="submit">Submit</button>
+                  <button class="btn btn-primary" type="">cancle</button>
+
                 </div>
               </form>
             </div>

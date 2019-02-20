@@ -82,7 +82,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('back.post.edit'.compact('post'));
+        return view('back.post.edit', compact('post'));
 
     }
 
@@ -93,10 +93,17 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request,$id)
     {
-        dd($request->all);
-    }
+        // dd($id);
+        // find the postid from database
+        $post = Post::findorFail($id);
+        // if found update the post
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->save();
+        return redirect()->route('post.index');
+        }
 
     /**
      * Remove the specified resource from storage.
