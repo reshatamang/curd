@@ -10,7 +10,7 @@
             <div class="box">
                 <div class="box-header">
                     <div class="pull-left">
-                        <a id="add-button" title="Add New" class="btn btn-success" href="{{route('post.create')}}"><i
+                        <a id="add-button" title="Add New" class="btn btn-success" href="{{route('posts.create')}}"><i
                                 class="fa fa-plus-circle"></i> Add New</a>
                     </div>
                     <div class="pull-right">
@@ -45,13 +45,18 @@
                             @foreach($posts as $post)
                             <tr>
                                 <td width="70">
-                                    <a title="Edit" class="btn btn-xs btn-default edit-row" href="{{route('post.edit', $post -> id)}}">
+                                    <a title="Edit" class="btn btn-xs btn-default edit-row" href="{{route('posts.edit', $post -> id)}}">
                                         <i class="fa fa-edit"></i>
 
                                     </a>
-                                    <a title="Delete" class="btn btn-xs btn-danger delete-row" href="#">
+                                    <form action="{{ route('posts.destroy',$post->id)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" title="Delete" class="btn btn-xs btn-danger delete-row">
                                         <i class="fa fa-times"></i>
-                                    </a>
+                                    </button>
+                                    </form>
+                                    
                                 </td>
                                 <td>{{ $post->title}}</td>
                                 <td>{{ str_limit($post->description,50)}}</td>

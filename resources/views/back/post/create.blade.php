@@ -7,7 +7,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="{{ route('post.index')}}">Post</a></li>
+    <li><a href="{{ route('posts.index')}}">Post</a></li>
     <li class="active">Add New Post</li>
   </ol>
 </section>
@@ -17,17 +17,9 @@
     <div class="row">
       <div class="col-xs-9">
           <div class="box">
-              @if ($errors->any())
-              <div class="alert alert-danger">
-                  <ul>
-                      @foreach ($errors->all() as $error)
-                          <li>{{ $error }}</li>
-                      @endforeach
-                  </ul>
-              </div>
-          @endif
+        
               <!-- form start -->
-              <form role="form" action="{{route('post.store')}}" method="POST">
+              <form role="form" action="{{route('posts.store')}}" method="POST">
                 @csrf
                 <div class="box-body">
                   <div class="form-group">
@@ -45,7 +37,7 @@
 
                 <div class="box-footer">
                   <button class="btn btn-primary" type="submit">Submit</button>
-                  <button class="btn btn-primary" type="submit">Cancle</button>
+                  <button class="btn btn-primary" type="submit">cancle</button>
 
                 </div>
               </form>

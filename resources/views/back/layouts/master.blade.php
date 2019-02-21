@@ -23,7 +23,7 @@
         <li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
       </ol>
     </section> --}}
-
+@include('back.layouts.common.flash-message')
     <!-- Main content -->
 @yield('content')
     <!-- /.content -->

@@ -56,7 +56,7 @@ class PostController extends Controller
         
         // return view or response
         
-        return redirect()->back();
+        return redirect()->route('posts.create')->with('success','Successfully Created');
         // return redirect()->route('post.create');
 
 
@@ -102,7 +102,8 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->description = $request->description;
         $post->save();
-        return redirect()->route('post.index');
+        return redirect()->route('posts.index')->with('success','Successfully updated');
+    
         }
 
     /**
@@ -113,6 +114,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
-    }
-}
+        // dd($post->id);
+        $post->delete();
+        return redirect()->back()->with('success','Successfully deleated');
+}}
