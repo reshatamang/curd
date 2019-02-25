@@ -26,6 +26,8 @@ Route::get('/admin',function(){
 Route::prefix('admin')->group(function(){
     // Route::get('search','PostController');
     Route::resource('posts','PostController');
+    Route::resource('category','CategoryControler');
+
 //     Route::get('posts','Postcontroller@index')->name('posts.index');
 // Route::get('posts/create','Postcontroller@create')->name('posts.create');
 // Route::post('posts/store','Postcontroller@store')->name('posts.store');
@@ -34,6 +36,5 @@ Route::prefix('admin')->group(function(){
 // Route::delete('posts/{post}','Postcontroller@destroy')->name('posts.destroy');
 
 });
-
 
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+
 
 class PostController extends Controller
 {
@@ -96,6 +98,11 @@ class PostController extends Controller
     public function update(Request $request,$id)
     {
         // dd($id);
+        // validate the form data
+        $validation = $request->validation([
+            'title' => 'required' ,Role::unique('posts')->ignore($id),
+            'description' => 'required'
+        ]);
         // find the postid from database
         $post = Post::findorFail($id);
         // if found update the post
