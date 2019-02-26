@@ -3,7 +3,7 @@
  <!-- Content Header (Page header) -->
  <section class="content-header">
   <h1>
-    edit Post
+    update Post
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -38,7 +38,7 @@
                 <!-- /.box-body -->
 
                 <div class="box-footer">
-                  <button class="btn btn-primary" type="submit">Submit</button>
+                  <button class="btn btn-primary" type="submit">update</button>
                   <button class="btn btn-primary" type="" href="{{route('category.index')}}">cancle</button>
 
                 </div>
