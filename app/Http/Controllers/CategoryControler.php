@@ -100,6 +100,8 @@ class CategoryControler extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::findorFail($id);
+        $category->delete();
+        return redirect()->route('category.index')->with('success','Deleted Successfully');
     }
 }
