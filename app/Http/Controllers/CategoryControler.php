@@ -14,7 +14,7 @@ class CategoryControler extends Controller
      */
     public function index()
     { 
-        $category = category::all();
+        $category = category::latest()->get();
         return view('back.category.index',compact('category')) ; 
      
     }
@@ -38,6 +38,7 @@ class CategoryControler extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
           // validate the form data
           $validatedData = $request->validate([
             'title' => 'required|unique:posts',
@@ -87,7 +88,8 @@ class CategoryControler extends Controller
     {
         // dd('$id');
        Category::where('id',$id)->update([
-           'title' => $request->title
+           'title' => $request->title,
+           'status' => $request->status
        ]) ;
        return redirect()->route('category.index')->with('success','update Sucessful');
     }

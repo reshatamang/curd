@@ -34,7 +34,15 @@
                     <textarea name="description" id="description" rows="10" class="form-control">{{$->description}}
                     </textarea>
                   </div> --}}
+                  <div class="form group">
+                    <label for="status">Select</label><br> 
+                    <select class="form-control" id="select" name="status">
+                      <option value="1" {{$category->status ==1?'selected':''}}>Enable</option>
+                      <option value="0" {{$category->status ==0?'selected':''}}>Disable</option>
+                    </select>
+                    </div>
                 </div>
+                
                 <!-- /.box-body -->
 
                 <div class="box-footer">

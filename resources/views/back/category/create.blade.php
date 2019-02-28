@@ -32,8 +32,16 @@
                     <textarea name="description" id="description" rows="10" class="form-control">{{old('description')}}
                     </textarea>
                   </div> --}}
+                  <div class="form group">
+                  <label for="status">Select</label><br> 
+                  <select class="form-control" id="select" name="status">
+                    <option value="1">Enable</option>
+                    <option value="0" selected="">Disable</option>
+                  </select>
+                  </div>
                 </div>
                 <!-- /.box-body -->
+               
 
                 <div class="box-footer">
                   <button class="btn btn-primary" type="submit">Submit</button>

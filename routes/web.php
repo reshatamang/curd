@@ -24,9 +24,16 @@ Route::get('/admin',function(){
     // return view('back.layouts.master');
 });
 Route::prefix('admin')->group(function(){
+
+    Route::resources([
+
+        'posts' =>'PostController',
+    'category' => 'CategoryControler'
+    ]);
+    
     // Route::get('search','PostController');
-    Route::resource('posts','PostController');
-    Route::resource('category','CategoryControler');
+    // Route::resource('posts','PostController');
+    // Route::resource('category','CategoryControler');
 
 //     Route::get('posts','Postcontroller@index')->name('posts.index');
 // Route::get('posts/create','Postcontroller@create')->name('posts.create');

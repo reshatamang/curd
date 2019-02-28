@@ -34,8 +34,8 @@
                         <thead>
                             <tr>
                                 <th>Action</th>
-                                <th>Category</th>
-                                {{-- <th>Descriptions</th> --}}
+                                <th>Category title</th>
+                                <th>status</th>
                                 {{-- <th>Author</th>
                                 <th>Category</th> --}}
                                 <th>Date</th>
@@ -59,7 +59,19 @@
                                     
                                 </td>
                                 <td>{{ $category->title}}</td>
-                                {{-- <td>{{ str_limit($category->description,50)}}</td> --}}
+                                <td>{{ $category->status==1?'enable':'disable' }}</td>
+                                
+                                {{-- @if($category->status==0)
+                                
+                                    disable
+                                
+                                @else
+                                
+                                    enable
+                                @endif --}}
+
+                            
+                                {{-- <td>{{ str_limit($category->status,50)}}</td> --}}
                                 {{-- <td>John Doe</td>
                                 <td>Programming</td> --}}
                                 

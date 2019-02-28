@@ -10,6 +10,6 @@ class Category extends Model
     //     'title'
     // ];
     protected $fillable = [
-        'title'
+        'title','status'
     ];
 }
