@@ -32,6 +32,18 @@
                     <textarea name="description" id="description" rows="10" class="form-control">{{old('description')}}
                     </textarea>
                   </div>
+                  <div class="form-group">
+                    <label for=""><strong>Category</strong></label>
+                        @foreach($categories as $category)
+                        <div class="radio">
+                            <label>
+                              <input type="radio" name="category_id" id="category-1" value="{{ $category->id}}">
+                              {{ $category->title}}
+                            </label>
+                        </div>
+                        @endforeach
+    
+                  </div>
                 </div>
                 <!-- /.box-body -->
 
@@ -43,8 +55,8 @@
               </form>
             </div>
       </div>
-      {{-- <div class="col-md-3">
-          <div class="box">
+      <div class="col-md-3">
+          {{-- <div class="box">
               <div class="box-header with-border">
                   <h3 class="box-title">Publish</h3>
               </div>
@@ -62,33 +74,24 @@
                       <a href="#" class="btn btn-primary">Publish</a>
                   </div>
               </div>
-          </div>
-          <div class="box">
+          </div> --}}
+          
+          {{-- <div class="box">
               <div class="box-header with-border">
                   <h3 class="box-title">Category</h3>
               </div>
               <div class="box-body">
+                @foreach($categories as $category)
                   <div class="radio">
                       <label>
                         <input type="radio" name="category" id="category-1" value="option1">
-                        Web Programming
+                        {{ $category->title}}
                       </label>
                   </div>
-                  <div class="radio">
-                      <label>
-                        <input type="radio" name="category" id="category-2" value="option1">
-                        Web Design
-                      </label>
-                  </div>
-                  <div class="radio">
-                      <label>
-                        <input type="radio" name="category" id="category-3" value="option1">
-                        Java
-                      </label>
-                  </div>
+                  @endforeach
               </div>
-          </div>
-          <div class="box">
+          </div> --}}
+          {{-- <div class="box">
               <div class="box-header with-border">
                   <h3 class="box-title">Feature Image</h3>
               </div>
@@ -106,8 +109,8 @@
                     </div>
                 </div>
               </div>
-          </div>
-      </div> --}}
+          </div> --}}
+      </div>
     </div>
   <!-- ./row -->
 </section>

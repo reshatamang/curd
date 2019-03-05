@@ -36,13 +36,12 @@
                                 <th>Action</th>
                                 <th>Title</th>
                                 <th>Descriptions</th>
-                                <th>Author</th>
                                 <th>Category</th>
                                 <th>Date</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($posts as $post)
+                            @forelse($posts as $post)
                             <tr>
                                 <td width="70">
                                     <a title="Edit" class="btn btn-xs btn-default edit-row" href="{{route('posts.edit', $post -> id)}}">
@@ -60,13 +59,20 @@
                                 </td>
                                 <td>{{ $post->title}}</td>
                                 <td>{{ str_limit($post->description,50)}}</td>
-                                <td>John Doe</td>
-                                <td>Programming</td>
-                                
-                                
-                            <td><abbr title="{{ $post->created_at }}">{{ $post->created_at }}</abbr> | <span class="label label-info">Schedule</span></td>
+                                <td>{{ $post->category}}</td>
+                                                  
+                                <td><abbr title="{{ $post->created_at }}">{{ $post->created_at }}</abbr> | <span class="label label-info">Schedule</span></td>
                             </tr>
-                          @endforeach
+                            @empty
+                                <tr>
+                                    <td colspan="6">
+                                        <p class="text-info text-center">
+                                            No Record Found
+                                        </p>
+                                    </td>
+                                </tr>
+                                
+                          @endforelse
                         </tbody>
                     </table>
                 </div>

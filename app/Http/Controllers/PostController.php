@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use\App\Category;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -27,7 +28,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('back.post.create');
+        $categories = Category::latest()->get();
+        return view('back.post.create',compact('categories'));
     }
 
     /**
@@ -38,17 +40,20 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         // validate the form data
         $validatedData = $request->validate([
             'title' => 'required|unique:posts',
             'description' => 'required|unique:posts',
         ]);
-    
+        // dd($request->all());
+
         // save the form data to database
 
         $post =new Post;
         $post->title = $request->title;
         $post->description = $request->description;
+        $post->category_id = $request->category_id;
         $post->user_id = 1;
         $post->slug = str_slug($request->title);
         $post->save();

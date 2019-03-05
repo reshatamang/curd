@@ -51,7 +51,7 @@
               </form>
             </div>
       </div>
-      {{-- <div class="col-md-3">
+      <div class="col-md-3">
           <div class="box">
               <div class="box-header with-border">
                   <h3 class="box-title">Publish</h3>
@@ -115,7 +115,7 @@
                 </div>
               </div>
           </div>
-      </div> --}}
+      </div>
     </div>
   <!-- ./row -->
 </section>

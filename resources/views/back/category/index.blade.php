@@ -36,13 +36,13 @@
                                 <th>Action</th>
                                 <th>Category title</th>
                                 <th>status</th>
-                                {{-- <th>Author</th>
-                                <th>Category</th> --}}
+                                {{-- <th>Author</th> --}}
+                                {{-- <th>Category</th> --}}
                                 <th>Date</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($category as $category)
+                            @forelse($category as $category)
                             <tr>
                                 <td width="70">
                                     <a title="Edit" class="btn btn-xs btn-default edit-row" href="{{route('category.edit', $category -> id)}}">
@@ -60,25 +60,20 @@
                                 </td>
                                 <td>{{ $category->title}}</td>
                                 <td>{{ $category->status==1?'enable':'disable' }}</td>
-                                
-                                {{-- @if($category->status==0)
-                                
-                                    disable
-                                
-                                @else
-                                
-                                    enable
-                                @endif --}}
-
-                            
-                                {{-- <td>{{ str_limit($category->status,50)}}</td> --}}
-                                {{-- <td>John Doe</td>
-                                <td>Programming</td> --}}
-                                
-                                
+                                {{-- <td>Programming</td> --}}  
                             <td><abbr title="{{ $category->created_at }}">{{ $category->created_at }}</abbr> | <span class="label label-info">Schedule</span></td>
                             </tr>
-                          @endforeach
+                            @empty
+                            <tr>
+                                    <td colspan="6">
+                                        <p class="text-info text-center">
+                                            No Record Found
+                                        </p>
+                                    </td>
+                                </tr>
+                                
+                            @endforelse
+                         
                         </tbody>
                     </table>
                 </div>
