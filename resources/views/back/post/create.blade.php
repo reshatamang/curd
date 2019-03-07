@@ -1,5 +1,7 @@
 @extends('back.layouts.master')
 @section('content')
+@if(count($categories) > 0 )
+
  <!-- Content Header (Page header) -->
  <section class="content-header">
   <h1>
@@ -115,6 +117,16 @@
   <!-- ./row -->
 </section>
 <!-- /.content -->
+@else
+  <div class="alert alert-danger" role="alert">
+    <p>
+      You must have at least one category
+    </p>
+    <p>
+      <a href="{{ route('category.create')}}">Create category</a>
+    </p>
+    </div>
+    @endif
 @endsection
 
 

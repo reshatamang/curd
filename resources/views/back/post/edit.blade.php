@@ -34,6 +34,18 @@
                     <textarea name="description" id="description" rows="10" class="form-control">{{$post->description}}
                     </textarea>
                   </div>
+                  <div class="form-group">
+                    <label for=""><strong>Category</strong></label>
+                        @foreach($categories as $category)
+                        <div class="radio">
+                            <label>
+                              <input type="radio" name="category_id" id="category-1" value="{{ $category->id}}">
+                              {{ $category->title}}
+                            </label>
+                        </div>
+                        @endforeach
+    
+                  </div>
                 </div>
                 <!-- /.box-body -->
 

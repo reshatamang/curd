@@ -17,7 +17,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        // $posts = Post::all();
+        $posts = Post::with('category')->get();
+        // dd($posts);
         return view('back.post.index',compact('posts')) ;  
     }
 
@@ -45,6 +47,7 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|unique:posts',
             'description' => 'required|unique:posts',
+            'category_id' => 'required'
         ]);
         // dd($request->all());
 
@@ -89,7 +92,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('back.post.edit', compact('post'));
+        $categories = Category::latest()->get();
+        return view('back.post.edit', compact('post','categories'));
 
     }
 
@@ -105,14 +109,16 @@ class PostController extends Controller
         // dd($id);
         // validate the form data
         $validation = $request->validation([
-            'title' => 'required' ,Role::unique('posts')->ignore($id),
-            'description' => 'required'
+            'title' => 'required',
+            'description' => 'required',
+            'category_id' => 'required'
         ]);
         // find the postid from database
         $post = Post::findorFail($id);
         // if found update the post
         $post->title = $request->title;
         $post->description = $request->description;
+        $post->category_id = $request->category_id;
         $post->save();
         return redirect()->route('posts.index')->with('success','Successfully updated');
     

@@ -59,7 +59,7 @@
                                 </td>
                                 <td>{{ $post->title}}</td>
                                 <td>{{ str_limit($post->description,50)}}</td>
-                                <td>{{ $post->category}}</td>
+                                <td>{{ $post->category->title}}</td>
                                                   
                                 <td><abbr title="{{ $post->created_at }}">{{ $post->created_at }}</abbr> | <span class="label label-info">Schedule</span></td>
                             </tr>
