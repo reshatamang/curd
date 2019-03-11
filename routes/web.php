@@ -19,12 +19,14 @@ Route::get('/', function () {
 
 // Back end
 
-Route::get('/admin',function(){
-    return view('back.dashboard');
+// Route::get('/admin',function(){
+//     return view('back.dashboard');
     // return view('back.layouts.master');
-});
+// });
 Route::prefix('admin')->group(function(){
-
+    Route::get('/',function(){
+        return view('back.dashboard');
+    });
     Route::resources([
 
         'posts' =>'PostController',
@@ -45,3 +47,7 @@ Route::prefix('admin')->group(function(){
 });
 
 
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
